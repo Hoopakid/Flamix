@@ -1,0 +1,134 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+          integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- owl carousel -->
+    <link rel="stylesheet" type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css">
+    <!--fonts   -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'css/contact-style.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+{% endblock %}
+{% block title %}Contact{% endblock %}
+
+{% block content %}
+    <!--subheader-->
+    <div class="main-container connect">
+        <div class="inside-container">
+            <div class="row">
+                <div class="col-12 subhead">
+                    <h1 class="text-center">contact us</h1>
+                    <nav class="breadcrumb page-linker">
+                        <a class="breadcrumb-item" href="#">Home <i class="fas fa-angle-right"></i></a>
+                        <span class="breadcrumb-item active">Contact Us </span>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-container ">
+        <div class="inside-container">
+            <div class="row">
+                <div class="col-sm-4 contact-col-marg text-center">
+                    <div class="row ">
+                        <div class="col-12 "><i class="fas fa-map-marker-alt col-icon-contact"></i></div>
+                    </div>
+                    <div class="row ">
+                        <div class="col-12 "><p> Collins Street West,<br> 121 King Street, Melbourne.</p></div>
+                    </div>
+                </div>
+                <div class="col-sm-4 contact-col-marg-middle contact-col-border text-center">
+                    <div class="row ">
+                        <div class="col-12 "><i class="fas fa-phone fa-rotate-90 col-icon-contact"></i></div>
+
+                    </div>
+                    <div class="row ">
+                        <div class="col-12 "><p>+(11)123 456 7890<br>
+                            +(11)123 456 7890 </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="col-sm-4 contact-col-marg text-center">
+                    <div class="row ">
+                        <div class=" col-12 "><i class="far fa-envelope col-icon-contact "> </i></div>
+                    </div>
+                    <div class="row ">
+                        <div class="col-12 "><p>info@flamix.com<br>info@flamix.com</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main-container ">
+        <div id="maps">
+
+        </div>
+
+    </div>
+    <!-- contact-->
+    <div class="main-container">
+        <div class="inside-container">
+            <div class="row">
+                <div class="col-md-12 ">
+                    <div class="">
+                        <div class="our-header">
+                            <h2>get in touch with us</h2>
+                            <div class="text-center">
+                                <hr>
+                                <i class="far fa-square rotate-45"></i> <i class="far fa-square rotate-45"></i>
+                                <hr>
+                            </div>
+                        </div>
+
+
+                        <form action="#">
+                            <div class="row">
+                                <div class="col-sm-4"><input type="text" placeholder="Your Name*" class="sm-input">
+                                </div>
+                                <div class="col-sm-4"><input type="email" placeholder="Your Email*" class="sm-input">
+                                </div>
+                                <div class="col-sm-4"><input type="text" placeholder="Website" class="sm-input"></div>
+                            </div>
+                            <input type="text" placeholder="Subject" class="sb-input">
+                            <textarea rows="6" class="area-text" placeholder="Type Your Mesage Here..."></textarea>
+                            <div class="text-center"><input type="submit" value="send mesage" class="submit-btn"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
+{% block js %}
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js"></script>
+    <script src="{% static 'js/map.js' %}"></script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBJsZXrw1mEMw8B_RfqnR4M5BdsLPLXTag&callback=initMap">
+    </script>
+{% endblock %}

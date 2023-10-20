@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login page</title>
+    <link rel="stylesheet" href="/static/css/login.css">
+</head>
+<body>
+<div class="container">
+    {% if messages %}
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            {% for message in messages %}
+                {{ message }}
+            {% endfor %}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    {% endif %}
+    <form method="post">
+        {% csrf_token %}
+        <label for="username">Username</label>
+        <input class="form-control" type="text" id="username" name="username" placeholder="Username"><br>
+        <label for="password">Password</label>
+        <input class="form-control" type="password" id="password" name="password" placeholder="Password"><br>
+        <br>
+        <button type="submit">Submit</button>
+        <br/>
+        <br/>
+        <span class="text-secondary">Don't have an account yet? <a href="/accounts/register">Sign up</a></span><br>
+        <a href="/accounts/reset-password">Forgot password?</a>
+    </form>
+</div>
+</body>
+</html>

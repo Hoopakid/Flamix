@@ -1,0 +1,7 @@
+pip install virtualenv - for install virtual environment
+virtualenv venv - for create the virtualenv (venv) file
+source venv/bin/activate - for activate virtual environment
+pip install Django - for install Django
+django-admin startproject root . - for start project in Django
+python manage.py runserver - for run our Django project
+python manage.py startapp main - for create our app in Django

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register page</title>
+    <link rel="stylesheet" href="/static/css/register.css">
+</head>
+<body>
+<div class="container">
+    {% if messages %}
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            {% for message in messages %}
+                {{ message }}
+            {% endfor %}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+    {% endif %}
+    <form method="post">
+        {% csrf_token %}
+        <label for="first_name">First_name</label>
+        <input class="form-control" type="text" id="first_name" name="first_name" placeholder="First name"><br>
+        <label for="last_name">Last_name</label>
+        <input class="form-control" type="text" id="last_name" name="last_name" placeholder="Last name"><br>
+        <label for="email">Email</label>
+        <input class="form-control" type="email" id="email" name="email" placeholder="Email"><br>
+        <label for="username">Username</label>
+        <input class="form-control" type="text" id="username" name="username" placeholder="Username"><br>
+        <label for="password1">Password</label>
+        <input class="form-control" type="password" id="password1" name="password1" placeholder="Password"><br>
+        <label for="password2">Confirm your password</label>
+        <input class="form-control" type="password" id="password2" name="password2" placeholder="Confirm your password"><br>
+        <button type="submit">OK</button>
+        <br/>
+        <span class="text-secondary">Do you have an account? <a href="/accounts/login">Sign in</a></span>
+    </form>
+</div>
+</body>
+</html>

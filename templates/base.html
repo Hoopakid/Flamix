@@ -1,0 +1,153 @@
+{% load static %}
+
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    {% block css %}{% endblock %}
+    <title>{% block title %}{% endblock %}</title>
+
+</head>
+{# header section #}
+<body>
+<div class="main-container contact-color">
+    <div class="inside-container ">
+        <div class="row row-spc">
+            <div class="col-md-12  col-disp">
+                <div class="icon-scp">
+                    <div class="left-side">
+                        <a class="link-head " href="#"><i class="fas fa-phone fa-rotate-90"></i> +(11)123 456 7890</a>
+                        <span>|</span>
+                        <a class="link-head " href="#"><i class="far fa-clock"></i> Sun-Mon: 9.00am to 7.00pm</a> <span>|</span>
+                        <a class="link-head " href="#"><i class="far fa-envelope "> </i> info@flamix.com </a>
+                    </div>
+                </div>
+                <div class="ml-auto icon-scp">
+                    <i class="fab fa-facebook-f "></i>
+                    <i class="fab fa-twitter icon-scp"></i>
+                    <i class="fab fa-linkedin-in icon-scp"></i>
+                    <i class="fab fa-tumblr icon-scp"></i>
+                    <i class="fab fa-vimeo-v icon-scp"></i>
+                    <i class="fab fa-pinterest-p icon-scp"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--menu-->
+<div class="main-container nav-bg-color">
+    <div class="inside-container nav-contain">
+        <nav class="navbar navbar-expand-lg navbar-light ">
+            <img src="{% static 'image/Logo-4.png' %}" class="img-fluid" alt="">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+                    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav nav-list ml-auto">
+                    <a class="menu" href="/">HOME</a>
+                    <a class="menu" href="/services">SERVICES</a>
+                    <a class="menu" href="/blog">BLOG</a>
+                    <a class="menu" href="/blog-single">SINGLE POST</a>
+                    <a class="menu  last-spc" href="/contact">CONTACT</a>
+                    <span class="menu last-spc color-line"> | </span>
+                    <a class="menu icon-color last-spc" href="#"><i class="fas fa-shopping-cart"></i></a>
+                    <a class="menu icon-color  last-spc" href="#"><i class="fas fa-search"></i></a>
+                    {% if user.is_authenticated %}
+                        <a class="menu  last-spc" href="">{{ user.first_name }} {{ user.last_name }}</a>
+                        <a class="menu  last-spc" href="/accounts/logout">LOGOUT</a>
+                    {% else %}
+                        <a class="menu  last-spc" href="/accounts/login">LOGIN</a>
+                    {% endif %}
+                </div>
+            </div>
+        </nav>
+    </div>
+</div>
+{# header section end #}
+
+{# footer section start #}
+{% block content %}{% endblock %}
+<footer class="page-footer footer-bg">
+    <div class="inside-container">
+        <div class="row footer-padd">
+            <div class=" col-sm-6 col-lg-3 foot-col-padd">
+                <div class="foot-logo"><img src="{% static 'image/foot-logo.jpg' %}" alt="" class="img-fluid"></div>
+                <div class="dream-text">
+                    <p>Got a dream and we just know now we're gonna make our dream come true. No phone no lights no
+                        motor car not a single luxury. </p>
+                </div>
+                <div>
+                    <i class="fab fa-facebook-f foot-icon "></i>
+                    <i class="fab fa-twitter foot-icon "></i>
+                    <i class="fab fa-linkedin-in foot-icon "></i>
+                    <i class="fab fa-tumblr  foot-icon"></i>
+                    <i class="fab fa-vimeo-v  foot-icon"></i>
+                    <i class="fab fa-pinterest-p foot-icon "></i>
+                </div>
+            </div>
+            <div class=" col-sm-6 col-lg-3 pop-col">
+                <span>popular link</span>
+                <hr>
+                <div class="row">
+                    <div class="col-6 pop-link">
+                        <a href="#">About Us</a>
+                        <a href="#">Services</a>
+                        <a href="#">Gallery</a>
+                        <a href="#">Team</a>
+                        <a href="#">Pricing</a>
+
+                    </div>
+                    <div class=" col-6  pop-link">
+                        <a href="#">contact us </a>
+                        <a href="#"> blog</a>
+                        <a href="#"> faq</a>
+                        <a href="#"> 404</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6  col-lg-3 pop-col">
+                <span>recent news </span>
+                <hr>
+                <div class="row ltl-blog row-ltl-blog">
+                    <div class="col-3"><img src="{% static 'blog/recent-post-1.jpg' %}" alt="" class="blog-img"></div>
+                    <div class="col-9 max-award">
+                        <p> Max Printshop wins an award</p>
+                        <i class="far fa-heart blog-icon"></i> <span> 45 </span> <span class="blog-vl"> | </span>
+                        <i class="far fa-comment blog-icon"></i><span> 34 </span>
+                    </div>
+                </div>
+                <hr class="recent-hr">
+                <div class="text-center"><a href="#" class="view-blog"> view blog</a></div>
+            </div>
+            <div class="col-sm-6 col-lg-3 pop-col ">
+                <span>contact us</span>
+                <hr>
+                <div class="row contact-row-margin">
+                    <i class="fas fa-map-marker-alt contact-icon"></i>
+                    <p> Collins Street West,<br> King Street, Melbourne.</p>
+                </div>
+                <div class="row contact-row-margin">
+                    <i class="fas fa-phone fa-rotate-90 contact-icon"></i>
+                    <p>+(11)123 456 789</p>
+                </div>
+                <div class="row contact-row-margin">
+                    <i class="far fa-envelope contact-icon "> </i>
+                    <p> info@flamix.com </p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 copyright-text">
+                <p> &#169; 2019 <a href="http://digitaconnect.com/">Digital Connect</a>. All Rights Reserved </p></div>
+        </div>
+    </div>
+</footer>
+{# footer section end #}
+{% block js %}{% endblock %}
+
+
+</body>
+</html>

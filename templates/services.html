@@ -1,0 +1,496 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+    <!-- font awesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+          integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- owl carousel -->
+    <link rel="stylesheet" type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css">
+    <!--fonts   -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'css/service-style.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+{% endblock %}
+{% block title %}Service{% endblock %}
+{% block content %}
+    <!--subheader-->
+    <div class="main-container connect">
+        <div class="inside-container">
+            <div class="row">
+                <div class="col-12 subhead">
+                    <h1 class="text-center">Services</h1>
+                    <nav class="breadcrumb page-linker">
+                        <a class="breadcrumb-item" href="#">Home <i class="fas fa-angle-right"></i></a>
+                        <span class="breadcrumb-item active">Services</span>
+                    </nav>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!--We are the best-->
+        <div class="main-container">
+        <div class="inside-container">
+            <div class="row">
+                <div class="col-12 our-header">
+                    <h2> Why we are the best</h2>
+                    <div class="text-center">
+                        <hr>
+                        <i class="far fa-square rotate-45"></i> <i class="far fa-square rotate-45"></i>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row row-pad">
+                {% for service in services %}
+                    <div class=" col-sm-6 col-md-3  our-spec">
+                        <div class="text-center">
+                            <i class="{{ service.icon_class }}"></i>
+                        </div>
+                        <h3> {{ service.title }}</h3>
+                        <p>{{ service.description }}</p>
+                        <div class="rd-btn">
+                            <button class="read-more"> read more</button>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="main-container">
+        <div class="inside-container">
+            <div class="row">
+                <div class="col-md-12 our-header">
+                    <h2> Why we are the best</h2>
+                    <div class="text-center">
+                        <hr>
+                        <i class="far fa-square rotate-45"></i> <i class="far fa-square rotate-45"></i>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+            <div class="row why-big-row">
+                <div class="col-lg-5 why-col-space">
+                    <div class="row why-row-padd">
+                        <div id="order-first" class="col-sm-12 col-md-7  why-col-padd">
+                            <h3>Post Cards</h3>
+                            <p>Till the one day when the lady met this fellow and they knew more hunch.</p>
+                            <a href="#">Read More </a>
+                        </div>
+                        <div class="col-sm-12 col-md-5">
+                            <div class="text-center">
+                                <img src="{% static 'service/post-card-1.jpg' %}" alt="" class="why-img img-fluid">
+                            </div>
+                            <div class="overlay-expand">
+                                <i class="fas fa-expand-arrows-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row why-row-padd-1">
+                        <div id="order-first" class="col-sm-12 col-md-7  why-col-padd">
+                            <h3>Brochures</h3>
+                            <p>Speed Racer he will see it through. Today survive as soldiers of fortune.</p>
+                            <a href="#">Read More </a>
+                        </div>
+                        <div class="col-sm-12 col-md-5">
+                            <div class="text-center">
+                                <img src="{% static 'service/brochure.jpg' %}" alt="" class="why-img img-fluid"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="center-img"></div>
+                </div>
+                <div class="col-sm-12 col-lg-5 why-col-space-1">
+                    <div class="row why-row-padd">
+                        <div class="col-sm-12 col-md-5">
+                            <div class="text-center">
+                                <img src="{% static 'service/posters.jpg' %}" alt="" class="why-img img-fluid">
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-7 why-col-padd-1">
+                            <h3>Posters</h3>
+                            <p>Now the world don't move to the beat of just one drum. right for some.</p>
+                            <a href="#">Read More </a>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row why-row-padd-1">
+                        <div class="col-sm-12 col-md-5">
+                            <div class="text-center">
+                                <img src="{% static 'service/bussines-card.jpg' %}" alt="" class="why-img img-fluid">
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-7  why-col-padd-1">
+                            <h3>Business Cards</h3>
+                            <p>On the most sensational inspirational cel-ebrational Muppetational…</p>
+                            <a href="#">Read More </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="main-container make-bg">
+        <div class="inside-container">
+            <div class="row">
+                <div class="col-md-12  our-header">
+                    <h2> how we make printing as easy</h2>
+                    <div class="text-center">
+                        <hr>
+                        <i class="far fa-square rotate-45"></i> <i class="far fa-square rotate-45"></i>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+            <div class="row ">
+                <div class="col-md-4   make-col">
+                    <div class="text-center make-icon">
+                        <i class="far fa-hand-point-up"></i>
+                    </div>
+
+                    <div class="make-text">
+                        <h3>01. Select Options</h3>
+                        <p>
+                            When the odds are against him and their dangers <br>
+                            work to do. You bet your life Speed Racer <br>
+                            he will see it through.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-4  make-col">
+
+                    <div class="text-center make-icon"><i class="fas fa-print"></i></div>
+                    <div class="make-text">
+                        <h3>02. upload Your design</h3>
+                        <p>
+                            Till the one day when the lady met this fellow and <br>
+                            they knew it was much more than a hunch. <br>
+                            Today still wanted.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="col-md-4  make-col">
+
+                    <div class="text-center make-icon"><i class="far fa-thumbs-up"></i></div>
+
+
+                    <div class="make-text">
+                        <h3>03. checkout your order</h3>
+                        <p>
+                            This time there's no stopping us. In a freak <br>
+                            mishap Ranger 3 and its pilot Captain William <br>
+                            Buck Rogers are blown.
+                        </p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div style="padding-bottom:100px;" class="main-container ">
+        <div class="inside-container">
+            <div class="row">
+                <div class="col-md-12  our-header">
+                    <h2> how we make printing as easy</h2>
+                    <div class="text-center">
+                        <hr>
+                        <i class="far fa-square rotate-45"></i> <i class="far fa-square rotate-45"></i>
+                        <hr>
+                    </div>
+
+                </div>
+            </div>
+            <div class="row">
+
+                <div class="col-md-4 text-center">
+                    <div class="best-pricing-text">
+                        <h3> basic</h3>
+                        <div class="items-price">
+                            <span><sup>$</sup>139 <span class="-item">\ Item</span></span>
+                        </div>
+                        <div class="best-check">
+                            <p><i class="fas fa-check-double"></i> Brochers</p>
+                            <p><i class="fas fa-check-double"></i> Post Cards</p>
+                            <p><i class="fas fa-check-double"></i> Business Cards</p>
+                            <p><i class="fas fa-check-double"></i> Posters</p>
+
+                        </div>
+
+                    </div>
+                    <div class="bottom-arrow"><p><i class="fas fa-shopping-cart"></i></p></div>
+                </div>
+
+                <div class="col-md-4 text-center">
+                    <div class="best-pricing-text premium">
+                        <h3> premium</h3>
+                        <div class="items-price">
+                            <span><sup>$</sup>159 <span class="-item">\ Item</span></span>
+                        </div>
+                        <div class="best-check">
+                            <p><i class="fas fa-check-double"></i> Brochers</p>
+                            <p><i class="fas fa-check-double"></i> Post Cards</p>
+                            <p><i class="fas fa-check-double"></i> Business Cards</p>
+                            <p><i class="fas fa-check-double"></i> Posters</p>
+
+                        </div>
+
+                    </div>
+                    <div class="bottom-arrow bottom-arrow-premium"><p><i class="fas fa-shopping-cart"></i></p></div>
+                </div>
+
+                <div class="col-md-4 text-center">
+                    <div class="best-pricing-text">
+                        <h3> ultimate</h3>
+                        <div class="items-price">
+                            <span><sup>$</sup>199 <span class="-item">\ Item</span></span>
+                        </div>
+                        <div class="best-check">
+                            <p><i class="fas fa-check-double"></i> Brochers</p>
+                            <p><i class="fas fa-check-double"></i> Post Cards</p>
+                            <p><i class="fas fa-check-double"></i> Business Cards</p>
+                            <p><i class="fas fa-check-double"></i> Posters</p>
+
+                        </div>
+
+                    </div>
+                    <div class="bottom-arrow"><p><i class="fas fa-shopping-cart"></i></p></div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="main-container contact-bg">
+        <div class="inside-container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="contact-con">
+                        <h2> If You Satisfied in our works.</h2>
+                        <p> If you have a problem if no one else can help and if you can find them maybe you can hire
+                            The
+                            A-Team.<br> But they got diff'rent strokes. it takes diff'rent strokes to move the world.
+                        </p>
+
+                        <div><a href="tel:+(11)123 456 7890" class="tel-number"> +(11)123 456 7890</a></div>
+                        <div class="contact-btn"><a href="#" class="contact"> Contact us</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--testimonial container-->
+    <div class="main-container">
+        <div class="inside-container">
+            <div class="row">
+                <div class="col-12 our-header prom-padd">
+                    <h2>our happy clients say </h2>
+                    <div class="text-center">
+                        <hr>
+                        <i class="far fa-square rotate-45"></i> <i class="far fa-square rotate-45"></i>
+                        <hr>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 owl-seci">
+                    <div class="owl-carousel owl-theme owl-testimonial">
+                        <div class="item item-over  ">
+                            <div class="all-testimonial">
+                                <div><img class="img-box " src="{% static 'max-image/happy-client-5.jpg' %}" alt="">
+                                </div>
+                                <div class="testimonial">
+                                    <p><i class="fas fa-quote-left"></i></p>
+                                    <p>A man is born he's a man of means. Then along come two they got <br>
+                                        nothin' but their jeans. Well we're movin' on up to the <br>
+                                        east on air. I never thought I could feel so free. </p>
+                                    <div class="stars-icon">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="author">
+                                <span> Michael Sommer</span>
+                                <p> Costumer</p>
+                            </div>
+                        </div>
+                        <div class="item item-over ">
+                            <div class="all-testimonial">
+                                <div><img class="img-box " src="{% static 'max-image/happy-client.jpg' %}" alt=""></div>
+                                <div class="testimonial">
+                                    <p><i class="fas fa-quote-left"></i></p>
+                                    <p>Michael Knight a young loner on a crusade to champion the cause<br>
+                                        of the innocent. The helpless. The powerless in a world of <br>
+                                        criminals who operate above the law.</p>
+                                    <div class="stars-icon">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="author">
+                                <span> eliyana doe</span>
+                                <p> Costumer</p>
+                            </div>
+                        </div>
+                        <div class="item item-over ">
+                            <div class="all-testimonial">
+                                <div><img class="img-box " src="{% static 'max-image/happy-client-1.jpg' %}" alt="">
+                                </div>
+                                <div class="testimonial">
+                                    <p><i class="fas fa-quote-left"></i></p>
+                                    <p>A man is born he's a man of means. Then along come two they got <br>
+                                        nothin' but their jeans. Well we're movin' on up to the <br>
+                                        east on air. I never thought I could feel so free. </p>
+                                    <div class="stars-icon">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="author">
+                                <span> John doe</span>
+                                <p> Costumer</p>
+                            </div>
+                        </div>
+                        <div class="item item-over ">
+                            <div class="all-testimonial">
+                                <div><img class="img-box " src="{% static 'max-image/happy-client-3.jpg' %}" alt="">
+                                </div>
+                                <div class="testimonial">
+                                    <p><i class="fas fa-quote-left"></i></p>
+                                    <p>Michael Knight a young loner on a crusade to champion the cause<br>
+                                        of the innocent. The helpless. The powerless in a world of <br>
+                                        criminals who operate above the law.</p>
+                                    <div class="stars-icon">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="author">
+                                <span> Maria Kate</span>
+                                <p> Costumer</p>
+                            </div>
+                        </div>
+                        <div class="item item-over ">
+                            <div class="all-testimonial">
+                                <div><img class="img-box " src="{% static 'max-image/happy-client-2.jpg' %}" alt="">
+                                </div>
+                                <div class="testimonial">
+                                    <p><i class="fas fa-quote-left"></i></p>
+                                    <p>A man is born he's a man of means. Then along come two they got <br>
+                                        nothin' but their jeans. Well we're movin' on up to the <br>
+                                        east on air. I never thought I could feel so free. </p>
+                                    <div class="stars-icon">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="far fa-star"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="author">
+                                <span> Antonio Moreo</span>
+                                <p> Costumer</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- partner carousel-->
+    <div class="main-container partner-bg">
+        <div class="inside-container ">
+            <div class="row">
+                <div class="col-12 owl-seci">
+                    <div class="owl-carousel owl-theme owl-partner">
+                        <div class="item item-over ">
+                            <div class="partner-logo ">
+                                <img src="{% static 'logos/Logo 1.png' %}" alt="">
+                            </div>
+
+                        </div>
+                        <div class="item item-over ">
+                            <div class="partner-logo ">
+                                <img src="{% static 'logos/Logo2.png' %}" alt="">
+                            </div>
+
+                        </div>
+                        <div class="item item-over ">
+                            <div class="partner-logo ">
+                                <img src="{% static 'logos/logo 3.png' %}l" alt="">
+                            </div>
+
+                        </div>
+                        <div class="item item-over ">
+                            <div class="partner-logo ">
+                                <img src="{% static 'logos/Logo 4.png' %}" alt="">
+                            </div>
+
+                        </div>
+                        <div class="item item-over ">
+                            <div class="partner-logo ">
+                                <img src="{% static 'logos/Logo 1.png' %}" alt="">
+                            </div>
+
+                        </div>
+                        <div class="item item-over ">
+                            <div class="partner-logo ">
+                                <img src="{% static 'logos/Logo2.png' %}" alt="">
+                            </div>
+
+                        </div>
+                        <div class="item item-over ">
+                            <div class="partner-logo ">
+                                <img src="{% static 'logos/logo 3.png' %}" alt="">
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block js %}
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js"></script>
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+{% endblock %}

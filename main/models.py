@@ -4,19 +4,6 @@ from django.contrib.auth import get_user_model
 User = get_user_model()
 
 
-class Service(models.Model):
-    title = models.CharField(max_length=150)
-    description = models.TextField()
-    icon_class = models.CharField(max_length=100)
-
-    class Meta:
-        verbose_name = 'Service'
-        verbose_name_plural = 'Services'
-
-    def __str__(self):
-        return self.title
-
-
 class Products(models.Model):
     title = models.CharField(max_length=150)
     cost = models.IntegerField(default=1)

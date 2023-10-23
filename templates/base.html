@@ -18,7 +18,7 @@
             <div class="col-md-12  col-disp">
                 <div class="icon-scp">
                     <div class="left-side">
-                        <a class="link-head " href="#"><i class="fas fa-phone fa-rotate-90"></i> +(11)123 456 7890</a>
+                        <a class="link-head " href="#"><i class="fas fa-phone fa-rotate-90"></i> +(998)94 884 48 80</a>
                         <span>|</span>
                         <a class="link-head " href="#"><i class="far fa-clock"></i> Sun-Mon: 9.00am to 7.00pm</a> <span>|</span>
                         <a class="link-head " href="#"><i class="far fa-envelope "> </i> info@flamix.com </a>
@@ -53,7 +53,10 @@
                     <a class="menu" href="/blog-single">SINGLE POST</a>
                     <a class="menu  last-spc" href="/contact">CONTACT</a>
                     <span class="menu last-spc color-line"> | </span>
-                    <a class="menu icon-color last-spc" href="#"><i class="fas fa-shopping-cart"></i></a>
+                    {% if user.is_authenticated %}
+                        <a class="menu icon-color last-spc" href="/shopping-cart"><i
+                                class="fas fa-shopping-cart"></i></a>
+                    {% endif %}
                     <a class="menu icon-color  last-spc" href="#"><i class="fas fa-search"></i></a>
                     {% if user.is_authenticated %}
                         <a class="menu  last-spc" href="">{{ user.first_name }} {{ user.last_name }}</a>

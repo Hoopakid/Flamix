@@ -98,18 +98,57 @@
             </div>
 
             <div class="row row-pad">
-                {% for service in services %}
-                    <div class=" col-sm-6 col-md-3  our-spec">
-                        <div class="text-center">
-                            <i class="{{ service.icon_class }}"></i>
-                        </div>
-                        <h3> {{ service.title }}</h3>
-                        <p>{{ service.description }}</p>
-                        <div class="rd-btn">
-                            <button class="read-more"> read more</button>
-                        </div>
+                <div class=" col-sm-6 col-md-3  our-spec">
+                    <div class="text-center">
+                        <i class="far fa-thumbs-up rounded-circle"></i>
                     </div>
-                {% endfor %}
+                    <h3> Quality Printing</h3>
+                    <p>
+                        If you have a problem if no one else can help and if you can find <br>
+                        can hire The A-Team.
+                    </p>
+                    <div class="rd-btn">
+                        <button class="read-more"> read more</button>
+                    </div>
+                </div>
+                <div class=" col-sm-6 col-md-3  our-spec">
+                    <div class="text-center">
+                        <i class="fas fa-truck rounded-circle"></i>
+                    </div>
+                    <h3> Ontime Delivery</h3>
+                    <p>
+                        Come and listen to a story about a man named Jed - a poor mountaineer barely kept his family
+                        fed.
+                    </p>
+                    <div class="rd-btn">
+                        <button class="read-more"> read more</button>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3  our-spec">
+                    <div class="text-center">
+                        <i class="fas fa-headphones-alt rounded-circle"></i>
+                    </div>
+                    <h3> 24/7 Support</h3>
+                    <p>
+                        The movie star the professor and Mary Ann here on Gilligans Michael Knight a young loner.
+                    </p>
+                    <div class="rd-btn">
+                        <button class="read-more"> read more</button>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-3  our-spec">
+                    <div class="text-center">
+                        <i class="far fa-money-bill-alt rounded-circle"></i>
+                    </div>
+                    <h3> Money Back Guarentee</h3>
+                    <p>
+                        The Brady Bunch the Brady Bunch that's the way we all became the
+                        Brady Bunch
+                    </p>
+                    <div class="rd-btn">
+                        <button class="read-more"> read more</button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -127,83 +166,88 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-6 col-lg-3 ">
-                    {% for service in service_data %}
-                    <div class="product-top product-top-1 ">
+                {% for service in service_data %}
+                    <div class="col-sm-6 col-lg-3" id="service_{{ service.id }}">
+                        <img src="{{ service.image.img.url }}" style="background-size: cover; !important;">
+                        <div><span>45 Viewers</span></div>
+                        <div class="product-text">
+                            <div class=" text-center"><span>{{ service.title }}</span></div>
+                            <p>$ {{ service.cost }}</p>
+                        </div>
+                        {% if user.is_authenticated %}
+                            <form method="post">
+                                {% csrf_token %}
+                                <input type="hidden" name="service_id" value="{{ service.id }}">
+                                <button type="submit"> add to cart</button>
+                            </form>
+                        {% endif %}
                         <div class="overlay">
                             <i class="fas fa-star stars"></i>
                             <i class="fas fa-star stars "></i>
                             <i class="fas fa-star stars"></i>
                             <i class="fas fa-star stars"></i>
                             <i class="far fa-star stars"></i>
-                            <div><span>45 Viewers</span></div>
-                            <button> add to cart</button>
                             <button><i class="far fa-heart heart"></i></button>
-
                         </div>
                     </div>
-                    <div class="product-text">
-                        <div class=" text-center"><span>{{ service.title }}</span></div>
-                        <p>$ {{ service.cost }}</p>
-                    </div>
-                    {% endfor %}
-                </div>
-{#                <div class="col-sm-6 col-lg-3 ">#}
-{#                    <div class="product-top product-top-2">#}
-{#                        <div class="overlay">#}
-{#                            <i class="fas fa-star stars"></i>#}
-{#                            <i class="fas fa-star stars "></i>#}
-{#                            <i class="fas fa-star stars"></i>#}
-{#                            <i class="fas fa-star stars"></i>#}
-{#                            <i class="far fa-star stars"></i>#}
-{#                            <div><span>45 Viewers</span></div>#}
-{#                            <button> add to cart</button>#}
-{#                            <button><i class="far fa-heart heart"></i></button>#}
-{#                        </div>#}
-{#                    </div>#}
-{#                    <div class="product-text">#}
-{#                        <div class=" text-center"><span>  Business Card</span></div>#}
-{#                        <p>$ 129</p>#}
-{#                    </div>#}
-{#                </div>#}
-{#                <div class="col-sm-6 col-lg-3 ">#}
-{#                    <div class="product-top product-top-3">#}
-{#                        <div class="overlay">#}
-{#                            <i class="fas fa-star stars"></i>#}
-{#                            <i class="fas fa-star stars "></i>#}
-{#                            <i class="fas fa-star stars"></i>#}
-{#                            <i class="fas fa-star stars"></i>#}
-{#                            <i class="far fa-star stars"></i>#}
-{#                            <div><span>45 Viewers</span></div>#}
-{#                            <button> add to cart</button>#}
-{#                            <button><i class="far fa-heart heart"></i></button>#}
-{#                        </div>#}
-{#                    </div>#}
-{#                    <div class="product-text">#}
-{#                        <div class=" text-center"><span>Post Card</span></div>#}
-{#                        <p>$ 79</p>#}
-{#                    </div>#}
-{#                </div>#}
-{#                <div class="col-sm-6 col-lg-3 ">#}
-{#                    <div class="product-top product-top-4">#}
-{#                        <div class="overlay">#}
-{#                            <i class="fas fa-star stars"></i>#}
-{#                            <i class="fas fa-star stars "></i>#}
-{#                            <i class="fas fa-star stars"></i>#}
-{#                            <i class="fas fa-star stars"></i>#}
-{#                            <i class="far fa-star stars"></i>#}
-{#                            <div><span>45 Viewers</span></div>#}
-{#                            <button> add to cart</button>#}
-{#                            <button><i class="far fa-heart heart"></i></button>#}
-{#                        </div>#}
-{#                    </div>#}
-{#                    <div class="product-text">#}
-{#                        <div class=" text-center"><span>  Business Card</span></div>#}
-{#                        <p>$ 159</p>#}
-{#                    </div>#}
-{#                </div>#}
+                {% endfor %}
             </div>
+            {#                <div class="col-sm-6 col-lg-3 ">#}
+            {#                    <div class="product-top product-top-2">#}
+            {#                        <div class="overlay">#}
+            {#                            <i class="fas fa-star stars"></i>#}
+            {#                            <i class="fas fa-star stars "></i>#}
+            {#                            <i class="fas fa-star stars"></i>#}
+            {#                            <i class="fas fa-star stars"></i>#}
+            {#                            <i class="far fa-star stars"></i>#}
+            {#                            <div><span>45 Viewers</span></div>#}
+            {#                            <button> add to cart</button>#}
+            {#                            <button><i class="far fa-heart heart"></i></button>#}
+            {#                        </div>#}
+            {#                    </div>#}
+            {#                    <div class="product-text">#}
+            {#                        <div class=" text-center"><span>  Business Card</span></div>#}
+            {#                        <p>$ 129</p>#}
+            {#                    </div>#}
+            {#                </div>#}
+            {#                <div class="col-sm-6 col-lg-3 ">#}
+            {#                    <div class="product-top product-top-3">#}
+            {#                        <div class="overlay">#}
+            {#                            <i class="fas fa-star stars"></i>#}
+            {#                            <i class="fas fa-star stars "></i>#}
+            {#                            <i class="fas fa-star stars"></i>#}
+            {#                            <i class="fas fa-star stars"></i>#}
+            {#                            <i class="far fa-star stars"></i>#}
+            {#                            <div><span>45 Viewers</span></div>#}
+            {#                            <button> add to cart</button>#}
+            {#                            <button><i class="far fa-heart heart"></i></button>#}
+            {#                        </div>#}
+            {#                    </div>#}
+            {#                    <div class="product-text">#}
+            {#                        <div class=" text-center"><span>Post Card</span></div>#}
+            {#                        <p>$ 79</p>#}
+            {#                    </div>#}
+            {#                </div>#}
+            {#                <div class="col-sm-6 col-lg-3 ">#}
+            {#                    <div class="product-top product-top-4">#}
+            {#                        <div class="overlay">#}
+            {#                            <i class="fas fa-star stars"></i>#}
+            {#                            <i class="fas fa-star stars "></i>#}
+            {#                            <i class="fas fa-star stars"></i>#}
+            {#                            <i class="fas fa-star stars"></i>#}
+            {#                            <i class="far fa-star stars"></i>#}
+            {#                            <div><span>45 Viewers</span></div>#}
+            {#                            <button> add to cart</button>#}
+            {#                            <button><i class="far fa-heart heart"></i></button>#}
+            {#                        </div>#}
+            {#                    </div>#}
+            {#                    <div class="product-text">#}
+            {#                        <div class=" text-center"><span>  Business Card</span></div>#}
+            {#                        <p>$ 159</p>#}
+            {#                    </div>#}
+            {#                </div>#}
         </div>
+    </div>
     </div>
 
     <!--our capabiliti -->

@@ -1,11 +1,12 @@
 from django.urls import path
 from .views import HomeTemplateView, blog, blog_single, contact, services, ShoppingCartTemplateView, \
-    IncrementCountAPIView, DecrementCountAPIView, ChangeCountAPIView
+    IncrementCountAPIView, DecrementCountAPIView, ChangeCountAPIView, CommentView
 from django.views.decorators.csrf import csrf_exempt
 
 urlpatterns = [
     path('', HomeTemplateView.as_view(), name='home'),
     path('shopping-cart', ShoppingCartTemplateView.as_view(), name='shopping-cart'),
+    path('comment', CommentView.as_view(), name='comment'),
     path('blog', blog, name='blog'),
     path('blog-single', blog_single, name='blog-single'),
     path('contact', contact, name='contact'),

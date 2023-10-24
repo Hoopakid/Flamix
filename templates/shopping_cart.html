@@ -49,23 +49,23 @@
                             <td class="product-name">
                                 <h2 class="h5 text-black">{{ product.service.title }}</h2>
                             </td>
-                            <td>${{ product.service.price }}</td>
+                            <td>${{ product.service.cost }}</td>
                             <td>
                                 <div class="input-group mb-3" style="max-width: 120px;">
                                     <div class="input-group-prepend">
                                         <button class="btn btn-outline-primary js-btn-minus" type="button"
-                                                onclick="decrement_count({{ product.id }}, {{ product.service.price }})">
+                                                onclick="decrement_count({{ product.id }}, {{ product.service.cost }})">
                                             &minus;
                                         </button>
                                     </div>
                                     <input id="product_count_{{ product.id }}"
-                                           oninput="change_count({{ product.id }}, {{ product.service.price }})"
+                                           oninput="change_count({{ product.id }}, {{ product.service.cost }})"
                                            type="text" class="form-control text-center" value="{{ product.count }}"
                                            placeholder="" aria-label="Example text with button addon"
                                            aria-describedby="button-addon1">
                                     <div class="input-group-append">
                                         <button class="btn btn-outline-primary js-btn-plus" type="button"
-                                                onclick="increment_count({{ product.id }}, {{ product.service.price }})">
+                                                onclick="increment_count({{ product.id }}, {{ product.service.cost }})">
                                             &plus;
                                         </button>
                                     </div>
@@ -73,7 +73,7 @@
 
                             </td>
                             <td>
-                                <span id="total_count_{{ product.id }}">${% calculate_total product.count product.service.price %}</span>
+                                <span id="total_count_{{ product.id }}">${% calculate_total product.count product.service.cost %}</span>
                             </td>
                             <td>
                                 <form method="post">
@@ -113,7 +113,7 @@
     <script src="{% static 'js/script.js' %}"></script>
     <script>
         const increment_count = (id, price) => {
-            fetch('http://127.0.0.1:8000/increment', {
+            fetch('http://localhost:8000/increment', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -128,7 +128,7 @@
             })
         }
         const decrement_count = (id, price) => {
-            fetch('http://127.0.0.1:8000/decrement', {
+            fetch('http://localhost:8000/decrement', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -143,7 +143,7 @@
             })
         }
         const change_count = (id, price) => {
-            fetch('http://127.0.0.1:8000/change', {
+            fetch('http://localhost:8000/change', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

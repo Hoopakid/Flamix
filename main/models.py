@@ -29,3 +29,10 @@ class ShoppingCart(models.Model):
 
     def __str__(self):
         return f'{self.service.title} from {self.user.username}'
+
+
+class Comment(models.Model):
+    message = models.TextField()
+    user = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True)
+    star = models.IntegerField(default=1)
+    created_at = models.DateTimeField(auto_now_add=True)

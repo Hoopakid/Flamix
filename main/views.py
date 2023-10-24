@@ -1,11 +1,12 @@
 import json
 
 from django.shortcuts import render, redirect
-from .models import ShoppingCart, Image, Products
 from django.views import View
 from django.db.models import Q
 from django.contrib import messages
 from django.http.response import JsonResponse
+
+from .models import Products, Image, ShoppingCart, Comment
 
 
 class HomeTemplateView(View):
@@ -14,12 +15,14 @@ class HomeTemplateView(View):
 
     def get(self, request):
         service_data = Products.objects.all()
+        comments = Comment.objects.all().order_by('-created_at')[:4]
         services_data = []
         for service in service_data:
             image = Image.objects.filter(service=service).first()
             service.image = image
             services_data.append(service)
         self.context.update({'service_data': services_data})
+        self.context.update({'comments': comments})
         return render(request, self.template_name, self.context)
 
     def post(self, request):
@@ -104,6 +107,26 @@ class ChangeCountAPIView(View):
         except Exception as e:
             return JsonResponse({'success': False, 'error': e})
         return JsonResponse({'success': True})
+
+
+class CommentView(View):
+    template_name = 'comment.html'
+    context = {}
+
+    def get(self, request):
+        return render(request, self.template_name, self.context)
+
+    def post(self, request):
+        message = request.POST.get('message')
+        is_anonymous = request.POST.get('is_anonymous')
+        user = None if is_anonymous == 'on' else request.user
+        print(message, user, is_anonymous)
+        comment = Comment.objects.create(
+            message=message,
+            user=user,
+        )
+        comment.save()
+        return redirect('/')
 
 
 def blog(request):

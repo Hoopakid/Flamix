@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+    <!-- font awesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+          integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- owl carousel -->
+    <link rel="stylesheet" type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css">
+    <!--fonts   -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+{% endblock %}
+
+{% block title %}Quality Printing{% endblock %}
+
+{% block content %}
+    <h4>When it comes to quality printing, you need a team that stands out from the rest. Introducing the "Quality
+        Printing Team" - your go-to solution for all your printing needs.
+
+        Why Choose Us?
+
+        At Quality Printing, we understand the importance of impeccable print materials for your business or personal
+        projects. Whether you need eye-catching business cards, vibrant banners, or professional brochures, we've got
+        you covered. Here's why you should choose the Quality Printing Team:
+
+        1. Expertise That Speaks for Itself:
+        Our team comprises skilled professionals who excel in the art and science of printing. With years of experience
+        under our belts, we guarantee top-notch print quality that leaves a lasting impression.
+
+        2. Cutting-Edge Technology:
+        We invest in the latest printing technology to ensure that your materials are produced with precision and
+        efficiency. Our state-of-the-art equipment allows us to handle projects of all sizes and complexities.
+
+        3. Customization at Its Best:
+        We believe in the power of personalization. Our services are tailored to meet your specific requirements.
+        Whether you have a unique design in mind or need assistance in creating one, our experts are here to assist you
+        every step of the way.
+
+        4. Timely Delivery:
+        We understand that time is of the essence. Rest assured, your projects will be completed within the agreed-upon
+        deadlines. We value your time as much as you do.
+
+        5. Affordable Excellence:
+        Quality printing shouldn’t come with a hefty price tag. We offer competitive prices without compromising on the
+        quality of our work. Your satisfaction is our priority.
+
+        Get in Touch:
+
+        Don't settle for mediocre printing when you can have exceptional quality and service. Join countless satisfied
+        customers who have experienced the difference with the Quality Printing Team.
+
+        If you have a printing problem, if no one else can help, and if you can find us, maybe you can hire the Quality
+        Printing Team.</h4>
+{% endblock %}
+
+{% block js %}
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js"></script>
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+    <!-- font awesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+          integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- owl carousel -->
+    <link rel="stylesheet" type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css">
+    <!--fonts   -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+{% endblock %}
+
+{% block title %}Money back guarantee{% endblock %}
+
+{% block content %}
+    <h4>
+        Money Back Guarantee: Your Peace of Mind
+
+        At EPAM, we believe in providing products/services that exceed your expectations. That's why we
+        offer a Money Back Guarantee. We understand that your satisfaction is paramount, and we stand by the quality of
+        our offerings.
+
+        Why Choose Our Money Back Guarantee?
+
+        Total Confidence: We have complete faith in the value and quality of our products/services. When you choose us,
+        you're choosing excellence.
+
+        Customer Satisfaction: Your happiness matters. If you're not satisfied with your purchase, we're not satisfied.
+        Our Money Back Guarantee ensures you're never stuck with something you don't love.
+
+        Hassle-Free Process: Returning a product or canceling a service shouldn’t be a headache. Our straightforward
+        process ensures you get your money back quickly and easily.
+
+        Transparent Policies: We believe in transparency. Our Money Back Guarantee policies are clear and concise,
+        ensuring you understand exactly what you're entitled to.
+
+        How It Works:
+
+        Try with Confidence: Purchase our product/service knowing you have a safety net. Use it, experience it, and see
+        the benefits for yourself.
+
+        Not Satisfied? No Problem: If for any reason you're not satisfied, contact our customer support team within the
+        specified time frame.
+
+        Quick Refund: We process your refund promptly, making sure your money is back in your account without
+        unnecessary delays.
+    </h4>
+{% endblock %}
+
+{% block js %}
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js"></script>
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+{% endblock %}

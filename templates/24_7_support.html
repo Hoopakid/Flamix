@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+    <!-- font awesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+          integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- owl carousel -->
+    <link rel="stylesheet" type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css">
+    <!--fonts   -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+{% endblock %}
+
+{% block title %}24/7 Support{% endblock %}
+
+{% block content %}
+    <h4>
+        24/7 Support: Your Lifeline in Any Situation
+
+        At EPAM, we understand that life doesn’t follow a 9-to-5 schedule. That's why we offer 24/7 Support, your
+        reliable lifeline in any situation. Just like the diverse characters on Gilligan's Island or the adventurous
+        spirit of Michael Knight, we are here to assist you around the clock, ensuring you never feel stranded or alone.
+
+        Why Choose Our 24/7 Support?
+
+        Immediate Assistance: Whether it's day or night, our support team is always ready to assist you. No more waiting
+        for business hours – help is just a call or click away.
+
+        Expert Guidance: Our dedicated team of experts, much like a trustworthy professor, is equipped with the
+        knowledge and skills to solve your problems and answer your queries.
+
+        Personalized Care: We understand that every situation is unique. Our support is not one-size-fits-all. We tailor
+        our assistance to your specific needs, just like the friendship between the characters on Gilligan's Island.
+
+        Reliability: You can count on us. Our 24/7 Support is as dependable as Michael Knight’s iconic car, Kitt,
+        ensuring you have a smooth experience whenever you need help.
+
+        How We Can Help:
+
+        Technical Assistance: Facing a technical glitch? Our experts are here to troubleshoot and guide you step by step
+        until the issue is resolved.
+
+        Customer Queries: Have a question about our products or services? Reach out to us anytime, and we'll provide
+        detailed and friendly responses, just like Mary Ann's warm hospitality.
+
+        Emergency Support: Emergencies don’t wait for business hours. Our 24/7 Support is your emergency hotline, ready
+        to provide quick solutions in critical situations.
+
+        Don’t navigate the challenges of life or business alone. Whether you're stranded on an island of uncertainties
+        or cruising through the complexities of modern technology, [Your Company Name] is here for you 24/7. Experience
+        the peace of mind that comes with knowing you have a dedicated support team by your side, always.
+
+        Just like the camaraderie between the characters in your favorite shows, our 24/7 Support is here to create a
+        seamless and supportive experience for you, whenever you need it.
+    </h4>
+{% endblock %}
+
+{% block js %}
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js"></script>
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+{% endblock %}

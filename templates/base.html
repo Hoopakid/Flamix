@@ -18,19 +18,22 @@
             <div class="col-md-12  col-disp">
                 <div class="icon-scp">
                     <div class="left-side">
-                        <a class="link-head " href="#"><i class="fas fa-phone fa-rotate-90"></i> +(998)94 884 48 80</a>
+                        <a class="link-head " href="/contact"><i class="fas fa-phone fa-rotate-90"></i> +(998)94 884 48
+                            80</a>
                         <span>|</span>
-                        <a class="link-head " href="#"><i class="far fa-clock"></i> Sun-Mon: 9.00am to 7.00pm</a> <span>|</span>
-                        <a class="link-head " href="#"><i class="far fa-envelope "> </i> info@flamix.com </a>
+                        <a class="link-head " href="/contact"><i class="far fa-clock"></i> Sun-Mon: 9.00am to 7.00pm</a>
+                        <span>|</span>
+                        <a class="link-head " href="/contact"><i class="far fa-envelope "> </i>
+                            azamovshavkat98@gmail.com </a>
                     </div>
                 </div>
                 <div class="ml-auto icon-scp">
-                    <i class="fab fa-facebook-f "></i>
-                    <i class="fab fa-twitter icon-scp"></i>
-                    <i class="fab fa-linkedin-in icon-scp"></i>
-                    <i class="fab fa-tumblr icon-scp"></i>
-                    <i class="fab fa-vimeo-v icon-scp"></i>
-                    <i class="fab fa-pinterest-p icon-scp"></i>
+                    <a href="https://github.com/Hoopakid"><i class="fab fa-facebook-f "></i></a>
+                    <a href="https://github.com/Hoopakid"><i class="fab fa-twitter icon-scp"></i></a>
+                    <a href="https://github.com/Hoopakid"><i class="fab fa-linkedin-in icon-scp"></i></a>
+                    <a href="https://github.com/Hoopakid"><i class="fab fa-tumblr icon-scp"></i></a>
+                    <a href="https://github.com/Hoopakid"><i class="fab fa-vimeo-v icon-scp"></i></a>
+                    <a href="https://github.com/Hoopakid"><i class="fab fa-pinterest-p icon-scp"></i></a>
                 </div>
             </div>
         </div>
@@ -47,13 +50,15 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav nav-list ml-auto">
-                    <a class="menu" href="/">HOME</a>
-                    <a class="menu" href="/services">SERVICES</a>
-                    <a class="menu" href="/blog">BLOG</a>
-                    <a class="menu" href="/blog-single">SINGLE POST</a>
-                    <a class="menu  last-spc" href="/contact">CONTACT</a>
-                    <span class="menu last-spc color-line"> | </span>
+                    <a href="/" class="menu">HOME</a>
+                    <a href="/services" class="menu">SERVICES</a>
+                    <a href="/blog" class="menu">BLOG</a>
+                    <a href="/blog-single" class="menu"
+                    >SINGLE POST</a>
+                    <a class="menu" href="/contact">CONTACT</a>
                     {% if user.is_authenticated %}
+                        <a class="menu" href="/add-product">ADD PRODUCT</a>
+                        <span class="menu last-spc color-line"> | </span>
                         <a class="menu icon-color last-spc" href="/shopping-cart"><i
                                 class="fas fa-shopping-cart"></i></a>
                     {% endif %}
@@ -83,12 +88,12 @@
                         motor car not a single luxury. </p>
                 </div>
                 <div>
-                    <i class="fab fa-facebook-f foot-icon "></i>
-                    <i class="fab fa-twitter foot-icon "></i>
-                    <i class="fab fa-linkedin-in foot-icon "></i>
-                    <i class="fab fa-tumblr  foot-icon"></i>
-                    <i class="fab fa-vimeo-v  foot-icon"></i>
-                    <i class="fab fa-pinterest-p foot-icon "></i>
+                    <a href="https://github.com/Hoopakid"><i class="fab fa-facebook-f foot-icon "></i></a>
+                    <a href="https://github.com/Hoopakid"><i class="fab fa-twitter foot-icon "></i></a>
+                    <a href="https://github.com/Hoopakid"><i class="fab fa-linkedin-in foot-icon "></i></a>
+                    <a href="https://github.com/Hoopakid"><i class="fab fa-tumblr  foot-icon"></i></a>
+                    <a href="https://github.com/Hoopakid"><i class="fab fa-vimeo-v  foot-icon"></i></a>
+                    <a href="https://github.com/Hoopakid"><i class="fab fa-pinterest-p foot-icon "></i></a>
                 </div>
             </div>
             <div class=" col-sm-6 col-lg-3 pop-col">
@@ -96,18 +101,18 @@
                 <hr>
                 <div class="row">
                     <div class="col-6 pop-link">
-                        <a href="#">About Us</a>
-                        <a href="#">Services</a>
-                        <a href="#">Gallery</a>
-                        <a href="#">Team</a>
-                        <a href="#">Pricing</a>
+                        <a href="/blog-single">About Us</a>
+                        <a href="/services">Services</a>
+                        <a href="/blog-single">Gallery</a>
+                        <a href="/">Team</a>
+                        <a href="/services">Pricing</a>
 
                     </div>
                     <div class=" col-6  pop-link">
-                        <a href="#">contact us </a>
-                        <a href="#"> blog</a>
-                        <a href="#"> faq</a>
-                        <a href="#"> 404</a>
+                        <a href="/contact">contact us </a>
+                        <a href="/blog"> blog</a>
+                        <a href="/blog"> faq</a>
+                        <a href="/contact"> 404</a>
                     </div>
                 </div>
             </div>
@@ -123,22 +128,22 @@
                     </div>
                 </div>
                 <hr class="recent-hr">
-                <div class="text-center"><a href="#" class="view-blog"> view blog</a></div>
+                <div class="text-center"><a href="/blog" class="view-blog"> view blog</a></div>
             </div>
             <div class="col-sm-6 col-lg-3 pop-col ">
                 <span>contact us</span>
                 <hr>
                 <div class="row contact-row-margin">
-                    <i class="fas fa-map-marker-alt contact-icon"></i>
+                    <a href="/contact"><i class="fas fa-map-marker-alt contact-icon"></i></a>
                     <p> Collins Street West,<br> King Street, Melbourne.</p>
                 </div>
                 <div class="row contact-row-margin">
-                    <i class="fas fa-phone fa-rotate-90 contact-icon"></i>
-                    <p>+(11)123 456 789</p>
+                    <a href="/contact"><i class="fas fa-phone fa-rotate-90 contact-icon"></i></a>
+                    <p>+(998)94 884 4880</p>
                 </div>
                 <div class="row contact-row-margin">
-                    <i class="far fa-envelope contact-icon "> </i>
-                    <p> info@flamix.com </p>
+                    <a href="/contact"><i class="far fa-envelope contact-icon "> </i></a>
+                    <p> azamovshavkat98@gmail.com </p>
                 </div>
             </div>
         </div>

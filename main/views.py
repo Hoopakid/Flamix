@@ -6,7 +6,7 @@ from django.db.models import Q
 from django.contrib import messages
 from django.http.response import JsonResponse
 
-from .models import Products, Image, ShoppingCart, Comment
+from .models import Products, Image, ShoppingCart, Comment, ComboProducts
 
 
 class HomeTemplateView(View):
@@ -129,6 +129,64 @@ class CommentView(View):
         return redirect('/')
 
 
+class ServicesView(View):
+    template_name = 'services.html'
+    context = {}
+
+    def get(self, request):
+        combo_products = ComboProducts.objects.all()
+        self.context.update({'combo_products': combo_products})
+        return render(request, self.template_name, self.context)
+
+    def post(self, request):
+        combo_product_id = request.POST.get('combo_product_id')
+        user = request.user
+        print(combo_product_id, user)
+        if not ShoppingCart.objects.filter(Q(user=user) & Q(service_id=combo_product_id)).exists():
+            print(123)
+            shopping_cart = ShoppingCart.objects.create(
+                user=user, service_id=combo_product_id
+            )
+            shopping_cart.save()
+            messages.info(request, 'Product added successfully !!!')
+            return redirect('/services')
+
+        messages.error(request, 'This service already exists in cart')
+        return redirect('/services')
+
+
+# def services(request):
+#     service_data = Products.objects.all()
+#     return render(request, 'services.html', {'services': service_data})
+
+
+class AddProductView(View):
+    template_name = 'add_product.html'
+    context = {}
+
+    def get(self, request):
+        return render(request, self.template_name, self.context)
+
+    def post(self, request):
+        title = request.POST.get('title')
+        cost = request.POST.get('cost')
+        images = request.FILES.getlist('images')
+
+        service = Products.objects.create(
+            title=title,
+            cost=cost,
+            author=request.user
+        )
+        service.save()
+        for image in images:
+            img = Image.objects.create(
+                img=image,
+                service=service
+            )
+            img.save()
+        return redirect('/add-product')
+
+
 def blog(request):
     return render(request, 'blog.html')
 
@@ -141,6 +199,17 @@ def contact(request):
     return render(request, 'contact.html')
 
 
-def services(request):
-    service_data = Products.objects.all()
-    return render(request, 'services.html', {'services': service_data})
+def quality_printing(request):
+    return render(request, 'quality_printing.html')
+
+
+def ontime_delivery(request):
+    return render(request, 'ontime_delivery.html')
+
+
+def support(request):
+    return render(request, '24_7_support.html')
+
+
+def money_back_guarantee(request):
+    return render(request, 'money_back_guarantee.html')

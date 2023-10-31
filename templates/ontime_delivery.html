@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+    <!-- font awesome-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+          integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!-- owl carousel -->
+    <link rel="stylesheet" type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+    <link rel="stylesheet" type="text/css"
+          href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.css">
+    <!--fonts   -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+{% endblock %}
+
+{% block title %}Ontime Delivery{% endblock %}
+
+{% block content %}
+    <h4>
+        "On-Time Delivery, Hillbilly Style"
+
+        Come and listen to a story about a man named Jed - a poor mountaineer barely kept his family fed. One day, Jed
+        had a revelation: in the bustling world of modern business, there’s one thing that truly sets you apart –
+        on-time delivery!
+
+        Now, Jed wasn’t your typical businessman. He didn’t wear fancy suits or attend high-profile meetings. Instead,
+        he relied on good ol' Hillbilly wisdom and a commitment to timely deliveries. Whether it was a load of lumber,
+        fresh produce, or even Granny's homemade jams, Jed ensured that everything reached its destination right on
+        schedule.
+
+        The Hillbilly Secret: Punctuality with a Dash of Charm
+
+        Jed knew the value of keeping promises. He’d hitch up his truck early in the mornin', load it up with the finest
+        goods from his farm, and hit the road with a smile as wide as the Mississippi. With a banjo on his knee and a
+        firm commitment to on-time delivery, he made friends wherever he went.
+
+        Why Choose Jed's On-Time Delivery Services?
+
+        Reliability Rooted in Tradition: Just like the sturdy oak tree on Jed's farm, our commitment to on-time delivery
+        stands strong. You can count on us to keep our word, just like Jed always did.
+
+        Efficiency in Every Mile: Jed knew every backroad and shortcut like the back of his hand. We navigate the
+        logistics landscape with precision, ensuring your goods reach their destination swiftly and securely.
+
+        Good Ol' Hillbilly Hospitality: We treat our customers like family. Expect a warm, friendly service that makes
+        you feel right at home. Jed wouldn’t have it any other way.
+
+        A Promise as Solid as the Ozark Mountains: Your deadlines are sacred to us. We make a solemn promise to deliver
+        on time, every time. It’s a Hillbilly guarantee!
+    </h4>
+{% endblock %}
+{% block js %}
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+            integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+            integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+            crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+            integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+            crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js"></script>
+    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+{% endblock %}

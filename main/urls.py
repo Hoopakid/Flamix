@@ -1,16 +1,22 @@
 from django.urls import path
-from .views import HomeTemplateView, blog, blog_single, contact, services, ShoppingCartTemplateView, \
-    IncrementCountAPIView, DecrementCountAPIView, ChangeCountAPIView, CommentView
+from .views import HomeTemplateView, blog, blog_single, contact, ServicesView, ShoppingCartTemplateView, \
+    IncrementCountAPIView, DecrementCountAPIView, ChangeCountAPIView, CommentView, quality_printing, \
+    ontime_delivery, money_back_guarantee, support, AddProductView
 from django.views.decorators.csrf import csrf_exempt
 
 urlpatterns = [
     path('', HomeTemplateView.as_view(), name='home'),
     path('shopping-cart', ShoppingCartTemplateView.as_view(), name='shopping-cart'),
+    path('services', ServicesView.as_view(), name='services'),
+    path('add-product', AddProductView.as_view(), name='add_product'),
     path('comment', CommentView.as_view(), name='comment'),
     path('blog', blog, name='blog'),
     path('blog-single', blog_single, name='blog-single'),
     path('contact', contact, name='contact'),
-    path('services', services, name='services'),
+    path('services/quality-printing', quality_printing, name='quality-printing'),
+    path('services/ontime-delivery', ontime_delivery, name='ontime-delivery'),
+    path('services/money-back-guarantee', money_back_guarantee, name='money-back-guarantee'),
+    path('services/support', support, name='support'),
 
     # API
     path('increment', csrf_exempt(IncrementCountAPIView.as_view()), name='increment'),

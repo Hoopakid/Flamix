@@ -43,11 +43,45 @@ class Comment(models.Model):
 
 class ComboProducts(models.Model):
     combo_name = models.CharField(max_length=150)
-    product1 = models.ForeignKey(Products, on_delete=models.CASCADE, related_name='product1')
-    product2 = models.ForeignKey(Products, on_delete=models.CASCADE, related_name='product2')
-    product3 = models.ForeignKey(Products, on_delete=models.CASCADE, related_name='product3')
-    product4 = models.ForeignKey(Products, on_delete=models.CASCADE, related_name='product4')
     cost = models.IntegerField(default=1)
 
     def __str__(self):
         return self.combo_name
+
+
+class ShoppingCartCombo(models.Model):
+    combo_id = models.ForeignKey(ComboProducts, on_delete=models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE, blank=True, null=True)
+    upload_at = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.combo_id.combo_name
+
+
+class Order(models.Model):
+    STATUS = (
+        (1, 'Created'),
+        (2, 'Wait for payment'),
+        (3, 'Paid'),
+        (4, 'Delivering'),
+        (5, 'Completed')
+    )
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    service = models.ForeignKey(Products, on_delete=models.CASCADE)
+    count = models.PositiveIntegerField(default=1)
+    created_at = models.DateTimeField(auto_now_add=True)
+    status = models.IntegerField(choices=STATUS)
+
+    def __str__(self):
+        return f'{self.service.title} >>>> {self.status}'
+
+
+class Message(models.Model):
+    name = models.CharField(max_length=255)
+    email = models.EmailField(max_length=150)
+    website = models.TextField()
+    subject = models.CharField(max_length=150)
+    message = models.TextField()
+
+    def __str__(self):
+        return self.name

@@ -1,7 +1,7 @@
 from django.urls import path
-from .views import HomeTemplateView, blog, blog_single, contact, ServicesView, ShoppingCartTemplateView, \
+from .views import HomeTemplateView, blog, blog_single, ContactTemplateView, ServicesView, ShoppingCartTemplateView, \
     IncrementCountAPIView, DecrementCountAPIView, ChangeCountAPIView, CommentView, quality_printing, \
-    ontime_delivery, money_back_guarantee, support, AddProductView
+    ontime_delivery, money_back_guarantee, support, AddProductView, OrderTemplateView, ComboShoppingCartTemplateView
 from django.views.decorators.csrf import csrf_exempt
 
 urlpatterns = [
@@ -10,9 +10,11 @@ urlpatterns = [
     path('services', ServicesView.as_view(), name='services'),
     path('add-product', AddProductView.as_view(), name='add_product'),
     path('comment', CommentView.as_view(), name='comment'),
+    path('checkout', OrderTemplateView.as_view(), name='checkout'),
+    path('combo', ComboShoppingCartTemplateView.as_view(), name='combo'),
+    path('contact', ContactTemplateView.as_view(), name='contact'),
     path('blog', blog, name='blog'),
     path('blog-single', blog_single, name='blog-single'),
-    path('contact', contact, name='contact'),
     path('services/quality-printing', quality_printing, name='quality-printing'),
     path('services/ontime-delivery', ontime_delivery, name='ontime-delivery'),
     path('services/money-back-guarantee', money_back_guarantee, name='money-back-guarantee'),

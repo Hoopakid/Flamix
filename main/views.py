@@ -1,12 +1,12 @@
 import json
 
-from django.shortcuts import render, redirect
 from django.views import View
 from django.db.models import Q
 from django.contrib import messages
 from django.http.response import JsonResponse
+from django.shortcuts import render, redirect, get_object_or_404
 
-from .models import Products, Image, ShoppingCart, Comment, ComboProducts
+from .models import Products, Image, ShoppingCart, Comment, ComboProducts, ShoppingCartCombo, Order, Message
 
 
 class HomeTemplateView(View):
@@ -141,13 +141,12 @@ class ServicesView(View):
     def post(self, request):
         combo_product_id = request.POST.get('combo_product_id')
         user = request.user
-        print(combo_product_id, user)
-        if not ShoppingCart.objects.filter(Q(user=user) & Q(service_id=combo_product_id)).exists():
-            print(123)
-            shopping_cart = ShoppingCart.objects.create(
-                user=user, service_id=combo_product_id
+        combo_product_instance = get_object_or_404(ComboProducts, pk=combo_product_id)
+        if not ShoppingCartCombo.objects.filter(Q(user=user) & Q(combo_id=combo_product_instance)).exists():
+            shopping_cart_combo = ShoppingCartCombo.objects.create(
+                user=user, combo_id=combo_product_instance
             )
-            shopping_cart.save()
+            shopping_cart_combo.save()
             messages.info(request, 'Product added successfully !!!')
             return redirect('/services')
 
@@ -155,9 +154,19 @@ class ServicesView(View):
         return redirect('/services')
 
 
-# def services(request):
-#     service_data = Products.objects.all()
-#     return render(request, 'services.html', {'services': service_data})
+class ComboShoppingCartTemplateView(View):
+    template_name = 'combo_shopping_cart.html'
+    context = {}
+
+    def get(self, request):
+        combo_products = ShoppingCartCombo.objects.all()
+        self.context.update({'combo_products': combo_products})
+        return render(request, self.template_name, self.context)
+
+    def post(self, request):
+        combo_id = request.POST.get('shopping_cart_combo_id')
+        ShoppingCartCombo.objects.get(pk=combo_id).delete()
+        return redirect('/combo')
 
 
 class AddProductView(View):
@@ -187,16 +196,56 @@ class AddProductView(View):
         return redirect('/add-product')
 
 
+class OrderTemplateView(View):
+    template_name = 'checkout.html'
+    context = {}
+
+    def get(self, request):
+        service = ShoppingCart.objects.select_related('service').filter(user=request.user)
+        self.context.update({'service': service})
+        return render(request, self.template_name, self.context)
+
+    def post(self, request, *args, **kwargs):
+        services = ShoppingCart.objects.select_related('service').filter(user=request.user)
+        for service in services:
+            order = Order.objects.create(
+                user=request.user,
+                service=service.service,
+                count=service.count,
+                status=1
+            )
+            order.save()
+        return redirect(request, self.template_name, self.context)
+
+
+class ContactTemplateView(View):
+    template_name = 'contact.html'
+    context = {}
+
+    def get(self, request):
+        return render(request, self.template_name, self.context)
+
+    def post(self, request):
+        name = request.POST.get('name')
+        message = request.POST.get('message')
+        subject = request.POST.get('subject')
+        email = request.POST.get('email')
+        website = request.POST.get('website')
+        print(name, email, subject, message, website)
+        message = Message.objects.create(
+            name=name, email=email, website=website,
+            subject=subject, message=message
+        )
+        message.save()
+        return redirect('/contact')
+
+
 def blog(request):
     return render(request, 'blog.html')
 
 
 def blog_single(request):
     return render(request, 'blog-single.html')
-
-
-def contact(request):
-    return render(request, 'contact.html')
 
 
 def quality_printing(request):

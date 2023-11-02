@@ -19,12 +19,22 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
 
     <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css">
+    <style>
+        a[href="/combo"] {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+    </style>
 {% endblock %}
 
 {% block content %}
     <div class="container">
         <div class="row mb-5">
             <div class="site-blocks-table">
+                <a href="/combo">Combo Products</a>
+                <br>
                 <table class="table table-bordered">
                     <thead>
                     <tr>
@@ -79,7 +89,7 @@
                                 <form method="post">
                                     {% csrf_token %}
                                     <input type="hidden" name="shopping_cart_id" value="{{ product.id }}">
-                                    <button href="#" class="btn btn-primary btn-sm">X</button>
+                                    <button class="btn btn-primary btn-sm">X</button>
                                 </form>
                             </td>
                         </tr>
@@ -88,7 +98,7 @@
                 </table>
             </div>
         </div>
-        <form method="post">
+        <form action="{% url 'checkout' %}" method="get">
             {% csrf_token %}
             <input type="hidden" name="user_id" value="{{ user.id }}">
             <button type="submit" class="btn btn-primary">Checkout</button>

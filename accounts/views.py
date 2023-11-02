@@ -3,6 +3,8 @@ from django.contrib.auth import authenticate, login, get_user_model, hashers, lo
 from django.contrib import messages
 from django.views import View
 
+from accounts.forms import LoginForm
+
 User = get_user_model()
 
 
@@ -11,9 +13,16 @@ class LoginView(View):
     context = {}
 
     def get(self, request):
+        # for use form
+        # form = LoginForm()
+        # self.context.update({'form': form})
+
         return render(request, self.template_name, self.context)
 
     def post(self, request):
+        # for use form
+        # form = request.POST.get('form')
+
         username = request.POST.get('username')
         password = request.POST.get('password')
         user = authenticate(username=username, password=password)

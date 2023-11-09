@@ -317,6 +317,25 @@ i:hover {
     width: 65px;
 }
 
+.our-header a {
+    text-decoration: none; /* Removes underline */
+    color: #007bff; /* Sets text color to blue (#007bff) */
+    font-weight: bold; /* Makes the text bold */
+    margin-top: 10px; /* Adds margin at the top */
+    display: inline-block; /* Makes the anchor element a block-level element */
+    padding: 10px 20px; /* Adds padding around the text */
+    background-color: #ffffff; /* Sets background color to white (#ffffff) */
+    border: 1px solid #007bff; /* Adds a border around the element */
+    border-radius: 5px; /* Rounds the corners of the element */
+    transition: background-color 0.3s, color 0.3s; /* Adds a smooth transition effect */
+}
+
+/* CSS for <a> element hover state */
+.our-header a:hover {
+    background-color: #007bff; /* Changes background color on hover to blue (#007bff) */
+    color: #ffffff; /* Changes text color on hover to white (#ffffff) */
+}
+
 .row-pad {
     padding: 35px;
 }

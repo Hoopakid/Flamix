@@ -85,3 +85,50 @@ class Message(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class Team(models.Model):
+    user_id = models.ForeignKey(User, on_delete=models.CASCADE)
+    first_name = models.CharField(max_length=255)
+    last_name = models.CharField(max_length=255)
+    photo = models.ImageField(upload_to='pics')
+    status = models.BooleanField(default=False)
+
+    def __str__(self):
+        return self.first_name
+
+
+class Blogs(models.Model):
+    name = models.CharField(max_length=255)
+    about = models.TextField()
+    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    img = models.ImageField(upload_to='pics')
+    date = models.DateTimeField(auto_now_add=True)
+    likes = models.IntegerField(default=0)
+    comments = models.IntegerField(default=0)
+    description = models.TextField(blank=True, null=True)
+
+    class Meta:
+        verbose_name = 'Blog'
+        verbose_name_plural = 'Blogs'
+
+    def __str__(self):
+        return self.name
+
+
+class Like(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    blog = models.ForeignKey('Blogs', on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f'{self.user.username} likes {self.blog.name}'
+
+
+class CommentForBlog(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    message = models.TextField()
+    date = models.DateTimeField(auto_now_add=True)
+    blog = models.ForeignKey(Blogs, on_delete=models.CASCADE, blank=True, null=True)
+
+    def __str__(self):
+        return f'{self.user.username} comments {self.message}'

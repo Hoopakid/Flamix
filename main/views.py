@@ -6,7 +6,8 @@ from django.contrib import messages
 from django.http.response import JsonResponse
 from django.shortcuts import render, redirect, get_object_or_404
 
-from .models import Products, Image, ShoppingCart, Comment, ComboProducts, ShoppingCartCombo, Order, Message
+from .models import Products, Image, ShoppingCart, Comment, ComboProducts, ShoppingCartCombo, Order, Message, Team, \
+    Blogs, Like
 
 
 class HomeTemplateView(View):
@@ -15,6 +16,7 @@ class HomeTemplateView(View):
 
     def get(self, request):
         service_data = Products.objects.all()
+        person = Team.objects.all()
         comments = Comment.objects.all().order_by('-created_at')[:4]
         services_data = []
         for service in service_data:
@@ -23,6 +25,7 @@ class HomeTemplateView(View):
             services_data.append(service)
         self.context.update({'service_data': services_data})
         self.context.update({'comments': comments})
+        self.context.update({'persons': person})
         return render(request, self.template_name, self.context)
 
     def post(self, request):
@@ -135,7 +138,9 @@ class ServicesView(View):
 
     def get(self, request):
         combo_products = ComboProducts.objects.all()
+        comments = Comment.objects.all()
         self.context.update({'combo_products': combo_products})
+        self.context.update({'comments': comments})
         return render(request, self.template_name, self.context)
 
     def post(self, request):
@@ -231,7 +236,6 @@ class ContactTemplateView(View):
         subject = request.POST.get('subject')
         email = request.POST.get('email')
         website = request.POST.get('website')
-        print(name, email, subject, message, website)
         message = Message.objects.create(
             name=name, email=email, website=website,
             subject=subject, message=message
@@ -240,8 +244,51 @@ class ContactTemplateView(View):
         return redirect('/contact')
 
 
-def blog(request):
-    return render(request, 'blog.html')
+class UserJoinTeamTemplateView(View):
+    template_name = 'add_team.html'
+    context = {}
+
+    def get(self, request):
+        return render(request, self.template_name, self.context)
+
+    def post(self, request):
+        first_name = request.POST.get('first_name')
+        last_name = request.POST.get('first_name')
+        photo = request.POST.get('photo')
+        status = True
+
+        person = Team.objects.create(
+            user_id=request.user,
+            first_name=first_name,
+            last_name=last_name,
+            photo=photo,
+            status=status
+        )
+        person.save()
+        return redirect('/add-team')
+
+
+class BlogTemplateView(View):
+    template_name = 'blog.html'
+    context = {}
+
+    def get(self, request, *args, **kwargs):
+        blogs = Blogs.objects.all()
+        self.context.update({'blogs': blogs})
+        return render(request, self.template_name, self.context)
+
+    def post(self, request, *args, **kwargs):
+        blog_id = request.POST.get('blog_id')
+        blog = get_object_or_404(Blogs, id=blog_id)
+        user = request.user
+        like, created = Like.objects.get_or_create(user=user, blog=blog)
+        if not created:
+            like.delete()
+            blog.likes -= 1
+        else:
+            blog.likes += 1
+        blog.save()
+        return redirect('/blog')
 
 
 def blog_single(request):

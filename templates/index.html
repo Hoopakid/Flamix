@@ -131,7 +131,9 @@
                         fed.
                     </p>
                     <div class="rd-btn">
-                        <a href="/services/ontime-delivery"><button class="read-more"> read more</button></a>
+                        <a href="/services/ontime-delivery">
+                            <button class="read-more"> read more</button>
+                        </a>
                     </div>
                 </div>
                 <div class="col-sm-6 col-md-3  our-spec">
@@ -143,12 +145,15 @@
                         The movie star the professor and Mary Ann here on Gilligans Michael Knight a young loner.
                     </p>
                     <div class="rd-btn">
-                        <a href="/services/support"><button class="read-more"> read more</button></a>
+                        <a href="/services/support">
+                            <button class="read-more"> read more</button>
+                        </a>
                     </div>
                 </div>
                 <div class="col-sm-6 col-md-3  our-spec">
                     <div class="text-center">
-                        <a href="/services/money-back-guarantee"><i class="far fa-money-bill-alt rounded-circle"></i></a>
+                        <a href="/services/money-back-guarantee"><i
+                                class="far fa-money-bill-alt rounded-circle"></i></a>
                     </div>
                     <h3> Money Back Guarentee</h3>
                     <p>
@@ -156,7 +161,9 @@
                         Brady Bunch
                     </p>
                     <div class="rd-btn">
-                        <a href="/services/money-back-guarantee"><button class="read-more"> read more</button></a>
+                        <a href="/services/money-back-guarantee">
+                            <button class="read-more"> read more</button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -484,6 +491,18 @@
             <div class="row">
                 <div class="col-12 our-header prom-padd">
                     <h2>our experienced team</h2>
+                    <a href="/add-team" style="text-decoration: none;
+                                                text-align: center;
+                                                color: #007bff;
+                                                font-weight: bold;
+                                                margin-top: 10px;
+                                                display: inline-block;
+                                                padding: 10px 20px;
+                                                background-color: #ffffff;
+                                                border: 1px solid #007bff;
+                                                border-radius: 5px;
+                                                transition: background-color 0.3s, color 0.3s;">
+                        WANT TO JOIN OUR TEAM</a>
                     <div class="text-center">
                         <hr>
                         <i class="far fa-square rotate-45"></i> <i class="far fa-square rotate-45"></i>
@@ -495,96 +514,15 @@
             <div class="row">
                 <div class="col-12 owl-seci">
                     <div class="owl-carousel owl-theme scren-owl">
-                        <div class="item item-over ">
-                            <div class="item-bg item-bg-1">
-                                <div class="over-image">
-                                    <span>Jhon Smith</span>
-                                    <div class="social-icon">
-                                        <i class="fab fa-facebook-f "></i>
-                                        <i class="fab fa-twitter "></i>
-                                        <i class="fab fa-linkedin-in "></i>
-                                        <i class="fab fa-tumblr "></i>
-                                    </div>
-                                    <div class="details-link"><a href="#">VIEW DETAILS </a></div>
-                                </div>
+                        {% for person in persons %}
+                            <div class="item item-over ">
+                                <span>{{ person.first_name }}</span>
+                                <img alt="Image Description"
+                                     style="min-height: 450px; background-color: #f9f9f9; background-size: cover">
                             </div>
-                        </div>
-                        <div class="item item-over">
-                            <div class="item-bg item-bg-2">
-
-                                <div class="over-image">
-                                    <span>Ana Kate</span>
-                                    <div class="social-icon">
-                                        <i class="fab fa-facebook-f "></i>
-                                        <i class="fab fa-twitter "></i>
-                                        <i class="fab fa-linkedin-in "></i>
-                                        <i class="fab fa-tumblr "></i>
-                                    </div>
-                                    <div class="details-link"><a href="#">VIEW DETAILS </a></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item item-over">
-                            <div class="item-bg item-bg-3">
-
-                                <div class="over-image">
-                                    <span>Johan Base</span>
-                                    <div class="social-icon">
-                                        <i class="fab fa-facebook-f "></i>
-                                        <i class="fab fa-twitter "></i>
-                                        <i class="fab fa-linkedin-in "></i>
-                                        <i class="fab fa-tumblr "></i>
-                                    </div>
-                                    <div class="details-link"><a href="#">VIEW DETAILS </a></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item item-over">
-                            <div class="item-bg item-bg-4">
-
-                                <div class="over-image">
-                                    <span>Elena Toga</span>
-                                    <div class="social-icon">
-                                        <i class="fab fa-facebook-f "></i>
-                                        <i class="fab fa-twitter "></i>
-                                        <i class="fab fa-linkedin-in "></i>
-                                        <i class="fab fa-tumblr "></i>
-                                    </div>
-                                    <div class="details-link"><a href="#">VIEW DETAILS </a></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item item-over">
-                            <div class="item-bg item-bg-5">
-
-                                <div class="over-image">
-                                    <span>Luka Jim </span>
-                                    <div class="social-icon">
-                                        <i class="fab fa-facebook-f "></i>
-                                        <i class="fab fa-twitter "></i>
-                                        <i class="fab fa-linkedin-in "></i>
-                                        <i class="fab fa-tumblr "></i>
-                                    </div>
-                                    <div class="details-link"><a href="#">VIEW DETAILS </a></div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="item item-over">
-                            <div class="item-bg item-bg-6">
-                                <div class="over-image">
-                                    <span>Nimi Sean</span>
-                                    <div class="social-icon">
-                                        <i class="fab fa-facebook-f "></i>
-                                        <i class="fab fa-twitter "></i>
-                                        <i class="fab fa-linkedin-in "></i>
-                                        <i class="fab fa-tumblr "></i>
-                                    </div>
-                                    <div class="details-link"><a href="#">VIEW DETAILS </a></div>
-                                </div>
-                            </div>
-                        </div>
-
+                        {% endfor %}
                     </div>
+
                 </div>
             </div>
         </div>
@@ -627,16 +565,16 @@
                         {% for comment in comments %}
                             <div class="item item-over  ">
                                 <div class="all-testimonial">
+                                    <div class="testimonial">
+                                        <p><i class="fas fa-quote-left"></i></p>
+                                        <p>{{ comment.message }}</p>
+                                    </div>
                                     {% if comment.user is not None %}
                                         <div><i class="fas fa-user-circle">
                                         </i>>
                                         </div>
-                                        <div class="testimonial">
-                                            <p><i class="fas fa-quote-left"></i></p>
-                                            <p>{{ comment.message }}</p>
-                                        </div>
                                         <div class="author">
-                                            <span> {{ comment.user.first_name }}{{ comment.user.last_name }}</span>
+                                            <span> {{ comment.user.first_name }} {{ comment.user.last_name }}</span>
                                             <p> Developer</p>
                                         </div>
                                     {% else %}

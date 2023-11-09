@@ -46,99 +46,43 @@
             <div class="row">
                 <div class="col-lg-8 ">
                     <div class="row">
-                        <div class="col-md-12  ">
-                            <div class="blog-post">
-                                <div><img src="{% static 'blog/post-1.jpg' %}" alt="" class="blog-image img-fluid">
-                                </div>
-                                <div class="blog-description">
-                                    <div class="text-center"><a href="#"> Shop </a>
-                                        <h2>Got a dream and we just know now gonna
-                                            make our dream come true.</h2>
-                                        <div class="post-info"><p><span class="info-over">  <i class="far fa-user"></i> By Admin</span>
-                                            <span class="spc-line"> |</span> <span class="info-over"> Dec 24,2016</span>
-                                            <span class="spc-line"> |</span> <span class="info-over"> <i
-                                                    class="far fa-heart"></i> 39 Likes </span> <span
-                                                    class="spc-line"> |</span>
-                                            <span class="info-over"> <i class="far fa-comment"></i> 55 comments </span>
-                                        </p>
-                                        </div>
+                        {% for blog in blogs %}
+                            <div class="row blog-row-padd"></div>
+                            <div class="col-md-12">
+                                <div class="blog-post">
+                                    <div><img src="{{ blog.image.url }}" alt="" class="blog-image img-fluid">
                                     </div>
-
-                                    <p> He busy revin' up his Powerful Mach So join us here each week my friends you're
-                                        sure
-                                        to get a smile from seven stranded castaways
-                                        here on Gilligans Isle. Wouldn't you like to get away? Sometimes you want to go
-                                        where everybody knows your name.</p>
-
-                                    <div class="rd-btn">
-                                        <button class="read-more"> read more</button>
+                                    <div class="blog-description">
+                                        <div class="text-center"><a href="#"> {{ blog.name }} </a>
+                                            <h2>{{ blog.about }}</h2>
+                                            <div class="post-info"><p><span class="info-over">  <i
+                                                    class="far fa-user"></i> By {{ blog.author.username }}</span>
+                                                <span class="spc-line"> |</span> <span
+                                                        class="info-over"> Dec 24,2016</span>
+                                                <form method="post" action="{% url 'blog' %}">
+                                                    {% csrf_token %}
+                                                    <input type="hidden" name="blog_id" value="{{ blog.id }}">
+                                                    <button class="spc-line" type="submit" style="background-color: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    font-size: 14px;
+    color: #3498db;
+    transition: color 0.3s ease;">{{ blog.likes }} Like
+                                                    </button>
+                                                </form>
+                                                <span class="info-over"> <i
+                                                        class="far fa-comment"></i> {{ blog.comments }} comments </span>
+                                            </div>
+                                        </div>
+                                        <p> {{ blog.description }}</p>
+                                        <div class="rd-btn">
+                                            <button class="read-more"> read more</button>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    <div class="row blog-row-padd">
-                        <div class="col-md-12  ">
-                            <div class="blog-post">
-                                <div><img src="{% static 'blog/post-2.jpg' %}" alt="" class="blog-image img-fluid">
-                                </div>
-                                <div class="blog-description">
-                                    <div class="text-center"><a href="#"> machine </a>
-                                        <h2>What might be right for you may not
-                                            be right for some.</h2>
-                                        <div class="post-info"><p><span class="info-over">  <i class="far fa-user"></i> By Admin</span>
-                                            <span class="spc-line"> |</span> <span class="info-over"> May 17,2016</span>
-                                            <span class="spc-line"> |</span> <span class="info-over"> <i
-                                                    class="far fa-heart"></i> 45 Likes </span> <span
-                                                    class="spc-line"> |</span>
-                                            <span class="info-over"> <i class="far fa-comment"></i> 18 comments </span>
-                                        </p>
-                                        </div>
-                                    </div>
-
-                                    <p> Those were the days. Here he comes Here comes Speed Racer. He's a demon on
-                                        wheels.
-                                        Just two good ol' boys Never meanin' no harm. Beats all you've ever saw been in
-                                        trouble with the law since the day they was born your name.</p>
-
-                                    <div class="rd-btn">
-                                        <button class="read-more"> read more</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="row blog-row-padd">
-                        <div class=" col-md-12 ">
-                            <div class="blog-post">
-                                <div><img src="{% static 'blog/post-3.jpg' %}" alt="" class="blog-image img-fluid">
-                                </div>
-                                <div class="blog-description">
-                                    <div class="text-center"><a href="#"> Worker </a>
-                                        <h2>heir house is a museum where people come to see ‘em.
-                                            They really are a screamed.</h2>
-                                        <div class="post-info"><p><span class="info-over">  <i class="far fa-user"></i> By Admin</span>
-                                            <span class="spc-line"> |</span> <span class="info-over"> Jan 24,2016</span>
-                                            <span class="spc-line"> |</span> <span class="info-over"> <i
-                                                    class="far fa-heart"></i> 85 Likes </span> <span
-                                                    class="spc-line"> |</span>
-                                            <span class="info-over"> <i class="far fa-comment"></i> 23 comments </span>
-                                        </p>
-                                        </div>
-                                    </div>
-
-                                    <p> He busy revin' up his Powerful Mach So join us here each week my friends you're
-                                        sure
-                                        to get a smile from seven stranded castaways
-                                        here on Gilligans Isle. Wouldn't you like to get away? Sometimes you want to go
-                                        where everybody knows your name.</p>
-
-                                    <div class="rd-btn">
-                                        <button class="read-more"> read more</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        {% endfor %}
                     </div>
                 </div>
                 <div class=" col-lg-4 side-bar-colon">

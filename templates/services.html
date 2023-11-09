@@ -64,7 +64,9 @@
                         can hire The A-Team.
                     </p>
                     <div class="rd-btn">
-                        <a href="/services/quality-printing"><button class="read-more"> read more</button></a>
+                        <a href="/services/quality-printing">
+                            <button class="read-more"> read more</button>
+                        </a>
                     </div>
                 </div>
                 <div class=" col-sm-6 col-md-3  our-spec">
@@ -79,7 +81,9 @@
                         fed.
                     </p>
                     <div class="rd-btn">
-                        <a href="/services/ontime-delivery"><button class="read-more"> read more</button></a>
+                        <a href="/services/ontime-delivery">
+                            <button class="read-more"> read more</button>
+                        </a>
                     </div>
                 </div>
                 <div class="col-sm-6 col-md-3  our-spec">
@@ -91,7 +95,9 @@
                         The movie star the professor and Mary Ann here on Gilligans Michael Knight a young loner.
                     </p>
                     <div class="rd-btn">
-                        <a href="/services/support"><button class="read-more"> read more</button></a>
+                        <a href="/services/support">
+                            <button class="read-more"> read more</button>
+                        </a>
                     </div>
                 </div>
                 <div class="col-sm-6 col-md-3  our-spec">
@@ -106,7 +112,9 @@
                         Brady Bunch
                     </p>
                     <div class="rd-btn">
-                        <a href="/services/money-back-guarantee"><button class="read-more">read more</button></a>
+                        <a href="/services/money-back-guarantee">
+                            <button class="read-more">read more</button>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -331,120 +339,33 @@
             <div class="row">
                 <div class="col-12 owl-seci">
                     <div class="owl-carousel owl-theme owl-testimonial">
-                        <div class="item item-over  ">
-                            <div class="all-testimonial">
-                                <div><img class="img-box " src="{% static 'max-image/happy-client-5.jpg' %}" alt="">
-                                </div>
-                                <div class="testimonial">
-                                    <p><i class="fas fa-quote-left"></i></p>
-                                    <p>A man is born he's a man of means. Then along come two they got <br>
-                                        nothin' but their jeans. Well we're movin' on up to the <br>
-                                        east on air. I never thought I could feel so free. </p>
-                                    <div class="stars-icon">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="far fa-star"></i>
+                        {% for comment in comments %}
+                            <div class="item item-over  ">
+                                <div class="all-testimonial">
+                                    <div class="testimonial">
+                                        <p><i class="fas fa-quote-left"></i></p>
+                                        <p>{{ comment.message }}</p>
+                                        <div class="stars-icon">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="far fa-star"></i>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <div class="author">
-                                <span> Michael Sommer</span>
-                                <p> Costumer</p>
-                            </div>
-                        </div>
-                        <div class="item item-over ">
-                            <div class="all-testimonial">
-                                <div><img class="img-box " src="{% static 'max-image/happy-client.jpg' %}" alt=""></div>
-                                <div class="testimonial">
-                                    <p><i class="fas fa-quote-left"></i></p>
-                                    <p>Michael Knight a young loner on a crusade to champion the cause<br>
-                                        of the innocent. The helpless. The powerless in a world of <br>
-                                        criminals who operate above the law.</p>
-                                    <div class="stars-icon">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="far fa-star"></i>
+                                {% if comment.user %}
+                                    <div class="author">
+                                        <span class="fas fa-user-circle">{{ comment.user.first_name }} {{ comment.user.last_name }}</span>
+                                        <p> Costumer</p>
                                     </div>
-                                </div>
-                            </div>
-                            <div class="author">
-                                <span> eliyana doe</span>
-                                <p> Costumer</p>
-                            </div>
-                        </div>
-                        <div class="item item-over ">
-                            <div class="all-testimonial">
-                                <div><img class="img-box " src="{% static 'max-image/happy-client-1.jpg' %}" alt="">
-                                </div>
-                                <div class="testimonial">
-                                    <p><i class="fas fa-quote-left"></i></p>
-                                    <p>A man is born he's a man of means. Then along come two they got <br>
-                                        nothin' but their jeans. Well we're movin' on up to the <br>
-                                        east on air. I never thought I could feel so free. </p>
-                                    <div class="stars-icon">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="far fa-star"></i>
+                                {% else %}
+                                    <div class="author">
+                                        <span class="fas fa-user-alt-slash">Anonymous</span>
                                     </div>
-                                </div>
+                                {% endif %}
                             </div>
-                            <div class="author">
-                                <span> John doe</span>
-                                <p> Costumer</p>
-                            </div>
-                        </div>
-                        <div class="item item-over ">
-                            <div class="all-testimonial">
-                                <div><img class="img-box " src="{% static 'max-image/happy-client-3.jpg' %}" alt="">
-                                </div>
-                                <div class="testimonial">
-                                    <p><i class="fas fa-quote-left"></i></p>
-                                    <p>Michael Knight a young loner on a crusade to champion the cause<br>
-                                        of the innocent. The helpless. The powerless in a world of <br>
-                                        criminals who operate above the law.</p>
-                                    <div class="stars-icon">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="author">
-                                <span> Maria Kate</span>
-                                <p> Costumer</p>
-                            </div>
-                        </div>
-                        <div class="item item-over ">
-                            <div class="all-testimonial">
-                                <div><img class="img-box " src="{% static 'max-image/happy-client-2.jpg' %}" alt="">
-                                </div>
-                                <div class="testimonial">
-                                    <p><i class="fas fa-quote-left"></i></p>
-                                    <p>A man is born he's a man of means. Then along come two they got <br>
-                                        nothin' but their jeans. Well we're movin' on up to the <br>
-                                        east on air. I never thought I could feel so free. </p>
-                                    <div class="stars-icon">
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="fas fa-star"></i>
-                                        <i class="far fa-star"></i>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="author">
-                                <span> Antonio Moreo</span>
-                                <p> Costumer</p>
-                            </div>
-                        </div>
+                        {% endfor %}
                     </div>
                 </div>
             </div>
